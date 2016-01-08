@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+
 class TropicalCyclone(models.Model):
     AGENCY_CHOICES = (
         ('CWB', 'Central Weather Bureau'),
@@ -39,3 +40,17 @@ class TropicalCyclone(models.Model):
     gust_speed = models.IntegerField(verbose_name='Max Gust Speed', blank=True, null=True)
     wind_unit = models.CharField(verbose_name='Wind Unit',max_length=3, blank=True, null=True, choices=WIND_UNIT_CHOICES)
 
+
+class AirQuality(models.Model):
+    reptime = models.DateTimeField()
+    stationid = models.IntegerField(db_index=True)
+    stationcode = models.CharField(max_length=4)
+    stationtype = models.CharField(max_length=32,null=True,blank=True)
+    name = models.CharField(max_length=32)
+    aqhi = models.IntegerField(null=True,blank=True)
+    no2 = models.FloatField(null=True,blank=True)
+    o3 = models.FloatField(null=True,blank=True)
+    so2 = models.FloatField(null=True,blank=True)
+    co = models.FloatField(null=True,blank=True)
+    pm10 = models.FloatField(null=True,blank=True)
+    pm25 = models.FloatField(null=True,blank=True)

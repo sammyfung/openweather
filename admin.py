@@ -7,14 +7,13 @@ from openweather.models import TropicalCyclone, AirQuality, WeatherData, Rainfal
 class TropicalCycloneAdmin(admin.ModelAdmin):
     list_display = ('report_time', 'agency', 'code', 'name', 'position_type', 'position_time', 'latitude', 'longitude',
                     'cyclone_type', 'wind_speed', 'gust_speed', 'wind_unit', 'pressure')
-    # list_filter = ('agency', 'position_type', 'cyclone_type', 'code')
     list_filter = ['agency', 'position_type']
-    search_fields = ['name', 'agency', 'code', 'cyclone_type', 'position_type']
+    search_fields = ['name', 'code']
 
 
 class AirQualityAdmin(admin.ModelAdmin):
      list_display = ('reptime', 'stationid', 'stationcode', 'stationtype', 'name','aqhi','no2','o3','so2','co','pm10','pm25')
-     list_filter = ['stationid', 'stationtype']
+     list_filter = ['name', 'stationtype']
 
 
 class WeatherDataAdmin(admin.ModelAdmin):

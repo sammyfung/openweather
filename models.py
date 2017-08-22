@@ -69,6 +69,7 @@ class WeatherData(models.Model):
     winddirection = models.CharField(max_length=16,null=True, blank=True)
     windspeed = models.IntegerField(null=True, blank=True)
     maxgust = models.IntegerField(null=True, blank=True)
+    pressure = models.FloatField(null=True, blank=True)
 
 
 class RainfallData(models.Model):

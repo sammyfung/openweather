@@ -19,7 +19,7 @@ class AirQualityAdmin(admin.ModelAdmin):
 class WeatherDataAdmin(admin.ModelAdmin):
     list_display = (
     'scraptime', 'reptime', 'station', 'ename', 'cname', 'temperture', 'humidity', 'temperturemax', 'temperturemin',
-    'winddirection', 'windspeed', 'maxgust')
+    'winddirection', 'windspeed', 'maxgust', 'pressure')
     list_filter = ['station', 'winddirection']
 
 

@@ -8,6 +8,7 @@ class TropicalCycloneAdmin(admin.ModelAdmin):
     list_display = ('report_time', 'agency', 'code', 'name', 'position_type', 'position_time', 'latitude', 'longitude',
                     'cyclone_type', 'wind_speed', 'gust_speed', 'wind_unit', 'pressure')
     # list_filter = ('agency', 'position_type', 'cyclone_type', 'code')
+    list_filter = ['agency', 'position_type']
     search_fields = ['name', 'agency', 'code', 'cyclone_type', 'position_type']
 
 
